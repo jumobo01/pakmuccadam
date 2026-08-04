@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Pakistan Muccadam Association (PMA)</title>
+<meta name="description" content="Contact the Pakistan Muccadam Association for membership enquiries and general correspondence.">
+<link rel="icon" href="assets/images/pma-logo.jpg">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar">
+    <div class="wrap">
+        <span>Representing Muccadams &middot; Promoting Integrity &middot; Ensuring Trust</span>
+        <div class="topbar-links">
+            <a href="contact.html">Contact</a>
+            <a href="documents.html">Documents</a>
+        </div>
+    </div>
+</div>
+
+<header class="site-header">
+    <div class="wrap header-inner">
+        <a class="brand" href="index.html">
+            <img class="logo" src="assets/images/pma-logo.jpg" alt="Pakistan Muccadam Association logo">
+            <span class="brand-text">
+                <span class="name">Pakistan Muccadam Association</span><br>
+                <span class="tagline">PMA &middot; Est. under the Companies Act, 2017</span>
+            </span>
+        </a>
+    </div>
+</header>
+
+<div class="nav-bar">
+    <div class="wrap">
+        <nav class="main-nav">
+            <ul>
+            <li><a href="index.html">About Association</a></li>
+            <li><a href="scope.html">Scope of Association</a></li>
+            <li><a href="documents.html">Association Documents</a></li>
+            <li><a href="newsletter.html">News Letter</a></li>
+            <li><a href="board.html">Managing Board</a></li>
+            <li><a href="members.html">Members of Association</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<main id="main">
+
+<section class="hero small">
+    <div class="wrap">
+        <div class="eyebrow">Get in Touch</div>
+        <h1>Contact Us</h1>
+        <p class="lead">Reach out to the Pakistan Muccadam Association for membership enquiries, industry matters, or general correspondence.</p>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="item">
+                    <div class="label">Registered Office</div>
+                    <p>Suite# 17, 3rd Floor, Davis Hytes,<br>38-Davis Road, Lahore, Punjab, Pakistan</p>
+                </div>
+                <div class="item">
+                    <div class="label">Phone</div>
+                    <p>042-36305587<br>042-36303883<br>042-36307050</p>
+                </div>
+                <div class="item">
+                    <div class="label">Office Bearers</div>
+                    <p>
+                        Chairman &mdash; Ibrahim Amin: +92 322 5480000, <a href="mailto:tristarho@gmail.com" style="color:var(--green-deep); text-decoration:underline;">tristarho@gmail.com</a><br>
+                        Vice Chairman &mdash; Ashfaq Awan: 0306-4141091, <a href="mailto:ashfaq.awan04@gmail.com" style="color:var(--green-deep); text-decoration:underline;">ashfaq.awan04@gmail.com</a><br>
+                        General Secretary &mdash; Ameer Abdullah Khan Niazi: +92 302 8660125, <a href="mailto:nclhof@gmail.com" style="color:var(--green-deep); text-decoration:underline;">nclhof@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!--
+            This form opens the visitor's email client with the message
+            pre-filled (works on a plain static site with no backend).
+            To collect submissions directly instead, replace the form's
+            "action" with a service such as Formspree and change the
+            method/action accordingly.
+            -->
+            <form class="contact-form" action="mailto:ashfaq.awan04@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="btn btn-gold">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="grid">
+            <div>
+                <h4>Pakistan Muccadam Association</h4>
+                <p style="color:#c9d4cb;">A professional, non-profit, non-political representative body of Muccadam companies operating across Pakistan &mdash; formed to promote integrity, trust, and fair representation between Muccadam companies and the banking sector.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="foot-links">
+                    <li><a href="index.html">About Association</a></li>
+                    <li><a href="scope.html">Scope of Association</a></li>
+                    <li><a href="documents.html">Association Documents</a></li>
+                    <li><a href="newsletter.html">News Letter</a></li>
+                    <li><a href="board.html">Managing Board</a></li>
+                    <li><a href="members.html">Members of Association</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul class="foot-links">
+                    <li>Suite# 17, 3rd Floor, Davis Hytes,<br>38-Davis Road, Lahore</li>
+                    <li>042-36305587, 042-36303883, 042-36307050</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <span>&copy; <span id="year"></span> Pakistan Muccadam Association. All rights reserved.</span>
+            <span>A company set up under Section 42 of the Companies Act, 2017.</span>
+        </div>
+    </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

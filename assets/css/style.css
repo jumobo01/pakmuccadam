@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Pakistan Muccadam Association — Site Stylesheet
+   Palette pulled from the PMA seal: deep institutional green + gold accent.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+:root{
+  --green-deep:   #0e3d1c;
+  --green:        #17532b;
+  --green-soft:   #e8efe9;
+  --gold:         #c9a227;
+  --gold-light:   #e4c563;
+  --cream:        #faf8f3;
+  --paper:        #ffffff;
+  --ink:          #1e231f;
+  --ink-soft:     #4b544c;
+  --line:         #ddd6c1;
+  --shadow:       0 10px 30px rgba(14,61,28,0.08);
+
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:  'Source Sans 3', 'Segoe UI', Tahoma, Arial, sans-serif;
+
+  --max: 1120px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.65;
+}
+img{ max-width:100%; display:block; }
+a{ color: inherit; text-decoration: none; }
+ul{ margin:0; padding:0; }
+li{ list-style:none; }
+
+h1,h2,h3,h4{
+  font-family: var(--serif);
+  color: var(--green-deep);
+  margin: 0 0 .5em;
+  line-height: 1.25;
+}
+h1{ font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 800; }
+h2{ font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; }
+h3{ font-size: 1.3rem; font-weight: 700; }
+p{ margin: 0 0 1em; color: var(--ink-soft); text-align: justify; text-justify: inter-word; }
+
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Skip link / focus ---------- */
+.skip-link{
+  position:absolute; left:-999px; top:auto;
+  background:var(--green-deep); color:#fff; padding:10px 16px; z-index:200;
+}
+.skip-link:focus{ left:16px; top:16px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline: 3px solid var(--gold); outline-offset: 2px;
+}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  background: var(--green-deep);
+  color: #f2ede0;
+  font-size: .85rem;
+}
+.topbar .wrap{
+  display:flex; justify-content:space-between; align-items:center;
+  padding-top:8px; padding-bottom:8px; flex-wrap:wrap; gap:6px;
+}
+.topbar a{ color:#f2ede0; }
+.topbar a:hover{ color: var(--gold-light); }
+.topbar-links{ display:flex; gap:18px; }
+
+/* ---------- Header / Nav ---------- */
+header.site-header{
+  background: var(--paper);
+}
+.header-inner{
+  display:flex; flex-direction:column; align-items:center;
+  padding: 18px 0 16px;
+  gap: 12px;
+}
+.brand{ display:flex; align-items:center; gap:16px; }
+.brand img.logo{ height:132px; width:auto; }
+.brand-text .name{
+  font-family: var(--serif); font-weight:800; color:var(--green-deep);
+  font-size: clamp(1.3rem, 3vw, 1.9rem); letter-spacing:.3px;
+  white-space: nowrap;
+}
+.brand-text .tagline{
+  font-size:.78rem; color: var(--gold); text-transform:uppercase;
+  letter-spacing:1.4px; font-weight:600;
+}
+
+.nav-bar{
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: sticky; top:0; z-index:100;
+}
+nav.main-nav{ width:100%; }
+nav.main-nav ul{
+  display:flex; flex-wrap:nowrap; justify-content:center; gap: 2px;
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+}
+nav.main-nav a{
+  display:block; padding: 10px 12px; font-weight:600; font-size:.86rem;
+  color: var(--ink); border-bottom: 3px solid transparent; white-space:nowrap;
+}
+nav.main-nav a:hover{ color: var(--green-deep); border-color: var(--gold-light); }
+nav.main-nav a.active{ color: var(--green-deep); border-color: var(--gold); }
+
+/* ---------- Hero ---------- */
+.hero{
+  background:
+    linear-gradient(180deg, rgba(14,61,28,0.94), rgba(14,61,28,0.88)),
+    radial-gradient(circle at 80% 20%, rgba(201,162,39,0.25), transparent 55%);
+  color: #f4f1e6;
+  padding: 64px 0 56px;
+}
+.hero .eyebrow{
+  color: var(--gold-light); text-transform:uppercase; letter-spacing:2px;
+  font-size:.78rem; font-weight:700; margin-bottom:10px;
+}
+.hero h1{ color:#fff; }
+.hero p.lead{ color:#e3e6df; max-width:62ch; font-size:1.08rem; }
+.hero.small{ padding: 40px 0; }
+
+/* star divider — echoes the mark on the association's letterhead */
+.star-divider{
+  display:flex; align-items:center; gap:14px; margin: 28px 0;
+}
+.star-divider::before, .star-divider::after{
+  content:""; flex:1; height:1px; background: var(--line);
+}
+.star-divider .mark{ color: var(--gold); font-size:1.1rem; }
+.hero .star-divider::before, .hero .star-divider::after{ background: rgba(244,241,230,0.3); }
+
+/* ---------- Sections ---------- */
+section{ padding: 56px 0; }
+section.alt{ background: var(--green-soft); }
+.section-head{ max-width: 72ch; margin-bottom: 28px; }
+.section-head .eyebrow{
+  color: var(--gold); text-transform:uppercase; letter-spacing:1.6px;
+  font-size:.78rem; font-weight:700; margin-bottom:8px;
+}
+
+/* ---------- Cards / grids ---------- */
+.grid{ display:grid; gap: 22px; }
+.grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+.grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+.grid.cols-4{ grid-template-columns: repeat(4, 1fr); }
+
+.card{
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+.card h3{ margin-bottom:10px; }
+.card .num{
+  font-family: var(--serif); color: var(--gold); font-weight:700;
+  font-size:1.6rem; display:block; margin-bottom:8px;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 11px 22px; border-radius: 3px; font-weight:700; font-size:.92rem;
+  border: 1px solid transparent; cursor:pointer;
+}
+.btn-gold{ background: var(--gold); color: var(--green-deep); }
+.btn-gold:hover{ background: var(--gold-light); }
+.btn-outline{ border-color: rgba(244,241,230,0.6); color:#fff; }
+.btn-outline:hover{ border-color:#fff; }
+.btn-green{ background: var(--green-deep); color:#fff; }
+.btn-green:hover{ background: var(--green); }
+
+/* ---------- Document / newsletter cards ---------- */
+.doc-card{
+  display:flex; gap:18px; align-items:flex-start;
+  background:var(--paper); border:1px solid var(--line); border-radius:4px;
+  padding:22px; box-shadow: var(--shadow);
+}
+.doc-icon{
+  flex:none; width:52px; height:52px; border-radius:6px;
+  background: var(--green-soft); color: var(--green-deep);
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--serif); font-weight:800; font-size:.95rem;
+}
+.doc-card .meta{ font-size:.82rem; color:var(--ink-soft); margin-top:4px; }
+.doc-card .btn{ margin-top:12px; }
+
+.update-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:4px;
+  padding:24px; box-shadow: var(--shadow); margin-bottom:22px;
+}
+.update-card .date{
+  font-size:.78rem; text-transform:uppercase; letter-spacing:1.2px;
+  color: var(--gold); font-weight:700;
+}
+.update-card h3{ margin-top:6px; }
+.update-card .gallery{
+  display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin: 16px 0;
+}
+.update-card .gallery img{
+  width:100%; height:150px; object-fit:cover; border-radius:4px; border:1px solid var(--line);
+}
+@media (max-width: 720px){
+  .update-card .gallery{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Board / member cards ---------- */
+.board-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; box-shadow: var(--shadow); text-align:center;
+}
+.board-card-link{
+  display:block; color:inherit; transition: transform .15s ease, box-shadow .15s ease;
+}
+.board-card-link:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(14,61,28,0.14);
+}
+.board-card-link:hover h3{ color: var(--gold); }
+.view-profile{
+  display:inline-block; margin-top:10px; color: var(--green-deep);
+  font-weight:700; font-size:.85rem;
+}
+.board-card-link:hover .view-profile{ color: var(--gold); }
+.board-card .photo{
+  width:150px; height:150px; border-radius:50%;
+  margin: 26px auto 6px; background: var(--green-soft);
+  display:flex; align-items:center; justify-content:center;
+  color: var(--green); font-family:var(--serif); font-size:2rem; font-weight:800;
+  overflow:hidden;
+}
+.board-card .photo img{
+  width:100%; height:100%; object-fit:cover; object-position: center;
+}
+.board-card .info{ padding:20px 18px 24px; }
+.board-card .role{
+  color: var(--gold); font-weight:700; font-size:.8rem;
+  text-transform:uppercase; letter-spacing:1.2px; margin-bottom:6px;
+}
+.board-card .bio{ font-size:.92rem; margin-top:10px; }
+
+/* ---------- Full board profiles ---------- */
+.profile-block{
+  background:var(--paper); border:1px solid var(--line); border-radius:4px;
+  padding: 32px; box-shadow: var(--shadow); margin-bottom: 28px;
+}
+.profile-block .p-role{
+  color: var(--gold); font-weight:700; font-size:.88rem;
+  text-transform:uppercase; letter-spacing:1px; margin-bottom:18px;
+}
+.profile-block h4{
+  font-family: var(--serif); color: var(--green-deep); font-size:1rem;
+  text-transform:uppercase; letter-spacing:.8px; margin: 22px 0 8px;
+}
+.profile-block h4:first-of-type{ margin-top:0; }
+.profile-block ul.profile-list{ margin: 0 0 14px 20px; padding:0; }
+.profile-list li{
+  list-style: disc; color: var(--ink-soft); margin-bottom:6px; text-align:left;
+}
+
+/* ---------- Table (members) ---------- */
+table.members{
+  width:100%; border-collapse:collapse; background:var(--paper);
+  box-shadow: var(--shadow);
+}
+table.members th, table.members td{
+  padding: 14px 16px; text-align:left; border-bottom:1px solid var(--line);
+  font-size:.94rem;
+}
+table.members th{
+  background: var(--green-deep); color:#fff; font-family:var(--serif); font-weight:700;
+}
+table.members tr:last-child td{ border-bottom:none; }
+
+.notice{
+  background: var(--green-soft); border-left:4px solid var(--gold);
+  padding: 16px 20px; border-radius:2px; font-size:.94rem; color: var(--ink-soft);
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{ display:grid; grid-template-columns: 1fr 1.1fr; gap:36px; }
+.contact-info .item{ margin-bottom:22px; }
+.contact-info .label{
+  color: var(--gold); text-transform:uppercase; letter-spacing:1.2px;
+  font-size:.76rem; font-weight:700; margin-bottom:4px;
+}
+form.contact-form{
+  background: var(--paper); border:1px solid var(--line); border-radius:4px;
+  padding:28px; box-shadow: var(--shadow);
+}
+form.contact-form label{
+  display:block; font-weight:600; font-size:.88rem; margin: 14px 0 6px;
+}
+form.contact-form label:first-child{ margin-top:0; }
+form.contact-form input, form.contact-form textarea{
+  width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:3px;
+  font-family: var(--sans); font-size:.95rem; background:#fff;
+}
+form.contact-form textarea{ min-height:120px; resize:vertical; }
+form.contact-form .btn{ margin-top:18px; }
+
+/* ---------- Footer ---------- */
+footer.site-footer{
+  background: var(--green-deep); color:#dfe7e0; padding: 44px 0 24px;
+}
+footer .grid{ grid-template-columns: 1.4fr 1fr 1fr; margin-bottom:28px; }
+footer h4{ color:#fff; font-size:1rem; margin-bottom:14px; }
+footer a{ color:#c9d4cb; }
+footer a:hover{ color: var(--gold-light); }
+footer .foot-links li{ margin-bottom:8px; }
+footer .bottom{
+  border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;
+  font-size:.82rem; color:#a9b7ad; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .grid.cols-3, .grid.cols-4{ grid-template-columns: repeat(2,1fr); }
+  .contact-grid{ grid-template-columns: 1fr; }
+  footer .grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 720px){
+  .topbar .wrap{ justify-content:center; text-align:center; font-size:.78rem; }
+  .brand{ flex-direction:column; gap:10px; text-align:center; }
+  .brand img.logo{ height:110px; }
+  .brand-text .name{
+    font-size: clamp(0.95rem, 5.6vw, 1.3rem);
+    white-space: normal;
+    line-height:1.2;
+  }
+  nav.main-nav a{ padding: 8px 9px; font-size:.78rem; }
+  .grid.cols-2, .grid.cols-3, .grid.cols-4{ grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+}
